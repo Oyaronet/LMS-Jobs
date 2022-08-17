@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+</head>
+<body class="bg-light"> 
+    <!-- NAVIGATION -->
+    <div class="container-fluid bg-secondary p-3">
+        <div class="container">
+            <nav class="navbar navbar-expand-sm navbar-dark">
+                <div class="container-fluid">
+                    <a href="#" class="navbar-brand">LMS Job Registration</a>
+                    <button
+                        type="button"
+                        class="navbar-toggler"
+                        data-bs-target="#mobileMenu"
+                        data-bs-toggle="collapse"
+                    >
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mobileMenu">
+                        {% block nav %}{% endblock nav %}
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- APPLICATION BODY -->
+    <div class="container">
+        {% block appbody %}{% endblock appbody %}
+    </div>
+    <script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

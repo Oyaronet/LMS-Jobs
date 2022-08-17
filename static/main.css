@@ -1,0 +1,19 @@
+.form-custome {
+    max-width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-custome1 {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alert-danger  {
+    font-size: 12px;
+}
+
+.alert-success  {
+    font-size: 12px;
+}

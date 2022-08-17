@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block title %} CHECK REGISTRATION STATUS {% endblock title %}
+{% block nav %}
+<ul class="navbar-nav ms-auto">
+    <li class="nav-item">
+        <a href="{{ url_for('registration') }}" class="nav-link">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+            Register
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="{{ url_for('adminLogin') }}" class="nav-link">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+            Admin
+        </a>
+    </li>
+</ul>
+{% endblock nav %}
+{% block appbody %}
+<!-- SEARCH FORM -->
+<h6 class="mt-3 text-center border-bottom pb-2 mb-3 text-danger">Check if You're Registered!</h6>
+<form action="" method="post" class="form-custome1 mt-4   p-3">
+    <h6 class="text-center border-bottom pb-2">Enter Your ID No 
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
+    </h6>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert-{{ category }} p-1">
+                    <span class="text-center">{{ message }}</span>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {{ form.hidden_tag() }}
+    <fieldset>
+        <div class="form-group mt-2">
+            {% if form.searchInput.errors %}
+                <div class="invalid-feedback">
+                    {{ form.searchInput(class="form-control is-invalid",
+                     autofocus="true", placeholder="Type Your ID Number") }}
+                    {% for error in form.searchInput.errors %}{% endfor %}
+                </div>
+            {% else %}
+                {{ form.searchInput(class="form-control form-control-sm",  autofocus="true",
+                 placeholder="Type Your ID Number")}}
+            {% endif %}
+        </div>
+        <div class="mt-2">
+            <button type="submit" class="btn btn-sm btn-secondary" style="margin-left: 88%;">
+                <i class="fa fa-search-plus" aria-hidden="true"></i>
+                    Search
+             </button>
+        </div>
+    </fieldset>
+</form>
+{% endblock appbody %}
