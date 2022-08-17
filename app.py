@@ -50,7 +50,7 @@ class Applicant(db.Model):
 
 
 # LANDING/REGISTRATION PAGE #
-@app.route("/", methods=["GET", "POST"])
+@app.route("/registration", methods=["GET", "POST"])
 def registration():
     reg_form = RegistrationForm()
     alert = False
