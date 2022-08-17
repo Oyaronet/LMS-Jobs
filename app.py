@@ -8,7 +8,7 @@ from openpyxl import Workbook
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "5155f718cc1702b2e8aba054bc1644f1"
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://bdmleradqobudb:9f8162c6ed03243914b7040cd52d91f7cf180bd80584afc395c49c6ba1af73bc@ec2-44-193-178-122.compute-1.amazonaws.com:5432/d3g0h66s74t3q"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://bdmleradqobudb:9f8162c6ed03243914b7040cd52d91f7cf180bd80584afc395c49c6ba1af73bc@ec2-44-193-178-122.compute-1.amazonaws.com:5432/d3g0h66s74t3q"
 
 db = SQLAlchemy(app)
 
