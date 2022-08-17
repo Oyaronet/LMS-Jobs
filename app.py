@@ -1,6 +1,4 @@
 # IMPORT REQUIRED PACKAGES #
-from enum import unique
-from turtle import down
 from flask import Flask, render_template, redirect, url_for, flash,request
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, IntegerField, SelectField, SubmitField
